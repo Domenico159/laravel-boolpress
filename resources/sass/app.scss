@@ -38,43 +38,45 @@
     }
 }
 
-.card {
-    position: relative;
-    transition: border 0.3s;
-
-    &:hover {
-        border-left: 10px inset rgb(23, 210, 235);
-        border-bottom: 10px inset rgb(23, 210, 235);
-    }
-
-    a {
-        transition: transform 0.3s, background 0.3s;
+.posts {
+    .card {
+        position: relative;
+        transition: border 0.3s;
 
         &:hover {
-            transform: scale(1.1);
+            border-left: 10px inset rgb(23, 210, 235);
+            border-bottom: 10px inset rgb(23, 210, 235);
         }
 
-        i {
-            font-size: 20px;
-        }
-    }
-    .delete {
-        position: absolute;
-        top: 10px;
-        right: 15px;
-
-        button {
-            color: rgb(241, 137, 137);
-            background-color: #fff;
-            border-radius: 30px;
-            padding: 5px 20px;
-            border: none;
-            font-size: 24px;
-            transition: color 0.3s, transform 0.3s;
+        a {
+            transition: transform 0.3s, background 0.3s;
 
             &:hover {
-                color: red;
-                transform: scale(1.2);
+                transform: scale(1.1);
+            }
+
+            i {
+                font-size: 20px;
+            }
+        }
+        .delete {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+
+            button {
+                color: rgb(241, 137, 137);
+                background-color: #fff;
+                border-radius: 30px;
+                padding: 5px 20px;
+                border: none;
+                font-size: 24px;
+                transition: color 0.3s, transform 0.3s;
+
+                &:hover {
+                    color: red;
+                    transform: scale(1.2);
+                }
             }
         }
     }

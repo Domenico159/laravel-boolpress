@@ -13,7 +13,7 @@
             </div>
         @endif
 
-        <div class="row">
+        <div class="row posts">
             @foreach ($posts as $post)
                 <div class="card-deck m-3">
                     <div class="card" style="width: 18rem;">
