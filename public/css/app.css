@@ -10966,7 +10966,9 @@ a.text-dark:focus {
 
 .card .delete button {
   color: #f18989;
-  background-color: transparent;
+  background-color: #fff;
+  border-radius: 30px;
+  padding: 5px 20px;
   border: none;
   font-size: 24px;
   transition: color 0.3s, transform 0.3s;
