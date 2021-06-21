@@ -19,10 +19,10 @@
                                 <a href="#" class="btn btn-success text-center"><i class="far fa-edit"></i></a>
                             </div>
                             <div class="delete">
-                                <form action="{{ 'admin.posts.destroy ', $post['id'] }}" methods="POST">
+                                <form action="{{ route('admin.posts.destroy', $post['id']) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button>
+                                    <button type="submit">
                                         <i class="far fa-trash-alt"></i>
                                     </button>
                                 </form>

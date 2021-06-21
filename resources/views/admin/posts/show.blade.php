@@ -13,7 +13,13 @@
 
             <a class="btn btn-success mt-5 mr-5" href="{{ route('admin.posts.index') }}">Back</a>
             <a class="btn btn-warning mt-5 mr-5" href="{{ route('admin.posts.edit', $post->id) }}">Edit</a>
-            <a class="btn btn-danger mt-5 mr-5" href="{{ route('admin.posts.destroy', $post->id) }}">Delete</a>
+            <form action="{{ route('admin.posts.destroy', $post->id) }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit">
+                    <i class="far fa-trash-alt btn btn-danger"></i>
+                </button>
+            </form>
         </div>
     </div>
 
