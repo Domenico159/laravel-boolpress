@@ -105,6 +105,6 @@ class PostController extends Controller
 
         $this_post->delete();
 
-        return redirect()->route('admin.posts.index');
+        return redirect()->route('admin.posts.index')->with('deleted', $this_post->title);
     }
 }

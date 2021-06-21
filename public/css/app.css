@@ -10942,6 +10942,24 @@ a.text-dark:focus {
   }
 }
 
+.action-show a {
+  transition: background 0.3s, transform 0.3s;
+}
+
+.action-show a:hover {
+  transform: scale(1.2);
+}
+
+.action-show button {
+  background-color: transparent;
+  border: none;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.action-show button:hover {
+  transform: scale(1.2);
+}
+
 .box-img {
   height: 500px;
   overflow: hidden;
@@ -10956,6 +10974,12 @@ a.text-dark:focus {
 
 .card {
   position: relative;
+  transition: border 0.3s;
+}
+
+.card:hover {
+  border-left: 10px inset #17d2eb;
+  border-bottom: 10px inset #17d2eb;
 }
 
 .card a {

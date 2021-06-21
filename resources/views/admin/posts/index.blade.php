@@ -6,6 +6,13 @@
     <div class="container">
         <h1>Your posts</h1>
 
+        @if (session('deleted'))
+            <div class="alert alert-success">
+                <strong>{{ session('deleted') }}</strong>
+                Succesfully deleted item.
+            </div>
+        @endif
+
         <div class="row">
             @foreach ($posts as $post)
                 <div class="card-deck m-3">
