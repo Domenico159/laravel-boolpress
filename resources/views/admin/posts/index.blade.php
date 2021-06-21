@@ -23,7 +23,8 @@
                             <p class="card-text">{{ $post['content'] }}</p>
                             <div class="actions d-flex justify-content-between">
                                 <a href="{{ route('admin.posts.show', $post['id']) }}" class="btn btn-primary">SHOW</a>
-                                <a href="#" class="btn btn-success text-center"><i class="far fa-edit"></i></a>
+                                <a href="{{ route('admin.posts.edit', $post['id']) }}"
+                                    class="btn btn-success text-center"><i class="far fa-edit"></i></a>
                             </div>
                             <div class="delete">
                                 <form action="{{ route('admin.posts.destroy', $post['id']) }}" method="POST">

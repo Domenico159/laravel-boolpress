@@ -78,7 +78,9 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $this_post = Post::find($id);
+
+        return view('admin.posts.edit', compact('this_post'));
     }
 
     /**
@@ -90,7 +92,15 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data =  $request->all();
+
+        $this_post = Post::find($id);
+
+        $data['slug'] = Str::slug($data['title'], '-');
+
+        $this_post->update($data);
+
+        return redirect()->route('admin.posts.show', $this_post->id);
     }
 
     /**

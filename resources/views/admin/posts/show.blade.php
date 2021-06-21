@@ -8,7 +8,7 @@
             <img src="{{ $post->img }}" alt="{{ $post->title }}">
         </div>
         <div class="text-img col-xs-12 col-md-6">
-            <h1>Your post selected is : {{ $post->title }}</h1>
+            <h1> {{ $post->title }}</h1>
             <h2>{{ $post->content }}</h2>
 
             <div class="d-flex action-show">
