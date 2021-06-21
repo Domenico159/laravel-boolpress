@@ -59,6 +59,9 @@
                             @endif
                         @else
                             <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin.posts.create') }}">New Post</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{ route('admin.posts.index') }}">Posts</a>
                             </li>
                             <li class="nav-item dropdown">
@@ -70,7 +73,7 @@
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
-                                                                                                         document.getElementById('logout-form').submit();">
+                                                                                                                     document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
