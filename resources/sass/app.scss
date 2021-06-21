@@ -1,8 +1,42 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url("https://fonts.googleapis.com/css?family=Nunito");
 
 // Variables
-@import 'variables';
+@import "variables";
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
+
+.card {
+    position: relative;
+
+    a {
+        transition: transform 0.3s, background 0.3s;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        i {
+            font-size: 20px;
+        }
+    }
+    .delete {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+
+        button {
+            color: rgb(241, 137, 137);
+            background-color: transparent;
+            border: none;
+            font-size: 24px;
+            transition: color 0.3s, transform 0.3s;
+
+            &:hover {
+                color: red;
+                transform: scale(1.2);
+            }
+        }
+    }
+}
