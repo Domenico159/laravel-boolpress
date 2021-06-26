@@ -13,33 +13,51 @@
             </div>
         @endif
 
-        <div class="row posts">
-            @foreach ($posts as $post)
-                <div class="card-deck m-3">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{ $post['img'] }}" alt="{{ $post['title'] }}">
-                        <div class="card-body">
-                            <h3 class="card-title">{{ $post['title'] }}</h3>
-                            <p class="card-text">{{ $post['content'] }}</p>
-                            <div class="actions d-flex justify-content-between">
-                                <a href="{{ route('admin.posts.show', $post['id']) }}" class="btn btn-primary">SHOW</a>
-                                <a href="{{ route('admin.posts.edit', $post['id']) }}"
-                                    class="btn btn-success text-center"><i class="far fa-edit"></i></a>
-                            </div>
-                            <div class="delete">
-                                <form action="{{ route('admin.posts.destroy', $post['id']) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit">
-                                        <i class="far fa-trash-alt"></i>
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        </div>
+        <table class="table mt-5">
+            <thead>
+               <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Create</th>
+                <th colspan="3" >Actions</th>
+               </tr>
+            </thead>
+
+            <tbody>
+                @foreach ($posts as $post )
+                    <tr>
+                        <td>{{ $post->id }}</td>
+                        <td>{{ $post->title }}</td>
+
+                        <td>
+                            <div>{{ $post->created_at->format('l d/m/y') }}</div>
+                            <div>{{ $post->created_at->diffForHumans() }}</div>
+                        </td>
+
+                        <td>
+                            <a class="btn btn-success" href="{{ route('admin.posts.show' , $post->id) }}">Show</a>
+                        </td>
+
+
+                        <td>
+                            <a class="btn btn-warning" href="{{ route('admin.posts.edit', $post->id) }}"><i
+                                class="far fa-edit"></i></a>
+                        </td>
+
+                        <td>
+                            <form action="{{ route('admin.posts.destroy', $post->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-danger" type="submit">
+                                    <i class="far fa-trash-alt "></i>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+
+        </table>
 
     </div>
 

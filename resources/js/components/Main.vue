@@ -61,7 +61,6 @@ main{
     min-height: calc(100vh - 110px);
     
     .card{
-        cursor: pointer;
         transition: border ease-in-out 0.3s;
         opacity: 0;
         transform: scale(0.1);
