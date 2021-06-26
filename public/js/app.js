@@ -2098,6 +2098,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Main',
   props: ['posts', 'page']
@@ -6616,7 +6617,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "main[data-v-b9c20fb8] {\n  min-height: calc(100vh - 110px);\n}\nmain .card[data-v-b9c20fb8] {\n  cursor: pointer;\n  transition: border ease-in-out 0.3s;\n  box-sizing: border-box;\n}\nmain .card[data-v-b9c20fb8]:hover {\n  border-left: 10px inset #17d2eb;\n  border-bottom: 10px inset #17d2eb;\n}", ""]);
+exports.push([module.i, "main[data-v-b9c20fb8] {\n  min-height: calc(100vh - 110px);\n}\nmain .card[data-v-b9c20fb8] {\n  cursor: pointer;\n  transition: border ease-in-out 0.3s;\n  box-sizing: border-box;\n}\nmain .card[data-v-b9c20fb8]:hover {\n  border-left: 10px inset #17d2eb;\n  border-bottom: 10px inset #17d2eb;\n}\nmain .pagination .btn-number[data-v-b9c20fb8] {\n  box-shadow: 0px 0px 5px #007bff;\n}", ""]);
 
 // exports
 
@@ -38734,7 +38735,8 @@ var render = function() {
               "button",
               {
                 key: i,
-                staticClass: "btn btn-primary mr-2",
+                staticClass: "btn btn-number  mr-2",
+                class: { "btn-primary": i == _vm.page.first },
                 on: {
                   click: function($event) {
                     return _vm.$emit("clickBtn", i)

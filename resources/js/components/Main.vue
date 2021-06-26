@@ -26,7 +26,8 @@
               </button>
 
               <button @click="$emit('clickBtn', i)"
-              class="btn btn-primary mr-2"
+              :class="{'btn-primary' : i == page.first}"
+              class="btn btn-number  mr-2"
               v-for="i in page.last"
               :key="i"
               >
@@ -69,5 +70,11 @@ main{
             border-bottom: 10px inset rgb(23, 210, 235);
         }
     } 
+
+    .pagination{
+        .btn-number{
+            box-shadow: 0px 0px 5px #007bff;
+        }
+    }
 }
 </style>
