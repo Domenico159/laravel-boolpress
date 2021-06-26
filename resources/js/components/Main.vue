@@ -63,7 +63,22 @@ main{
     .card{
         cursor: pointer;
         transition: border ease-in-out 0.3s;
-        box-sizing: border-box;
+        opacity: 0;
+        transform: scale(0.1);
+        animation: card-effect 0.8s forwards;
+
+        @keyframes card-effect {
+            
+            0%{
+                opacity: 0;
+                transform: scale(0.1);
+            }
+            100%{
+                opacity: 1;
+                transform: scale(1.0);
+            }
+
+        }
 
         &:hover {
             border-left: 10px inset rgb(23, 210, 235);

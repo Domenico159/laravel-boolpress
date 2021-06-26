@@ -6617,7 +6617,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "main[data-v-b9c20fb8] {\n  min-height: calc(100vh - 110px);\n}\nmain .card[data-v-b9c20fb8] {\n  cursor: pointer;\n  transition: border ease-in-out 0.3s;\n  box-sizing: border-box;\n}\nmain .card[data-v-b9c20fb8]:hover {\n  border-left: 10px inset #17d2eb;\n  border-bottom: 10px inset #17d2eb;\n}\nmain .pagination .btn-number[data-v-b9c20fb8] {\n  box-shadow: 0px 0px 5px #007bff;\n}", ""]);
+exports.push([module.i, "main[data-v-b9c20fb8] {\n  min-height: calc(100vh - 110px);\n}\nmain .card[data-v-b9c20fb8] {\n  cursor: pointer;\n  transition: border ease-in-out 0.3s;\n  opacity: 0;\n  transform: scale(0.1);\n  -webkit-animation: card-effect-data-v-b9c20fb8 0.8s forwards;\n          animation: card-effect-data-v-b9c20fb8 0.8s forwards;\n}\n@-webkit-keyframes card-effect-data-v-b9c20fb8 {\n0% {\n    opacity: 0;\n    transform: scale(0.1);\n}\n100% {\n    opacity: 1;\n    transform: scale(1);\n}\n}\n@keyframes card-effect-data-v-b9c20fb8 {\n0% {\n    opacity: 0;\n    transform: scale(0.1);\n}\n100% {\n    opacity: 1;\n    transform: scale(1);\n}\n}\nmain .card[data-v-b9c20fb8]:hover {\n  border-left: 10px inset #17d2eb;\n  border-bottom: 10px inset #17d2eb;\n}\nmain .pagination .btn-number[data-v-b9c20fb8] {\n  box-shadow: 0px 0px 5px #007bff;\n}", ""]);
 
 // exports
 
