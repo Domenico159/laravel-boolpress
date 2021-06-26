@@ -6,6 +6,8 @@
       <!-- main -->
      <Main
      :posts="posts"
+     :page="page"
+     @clickBtn="getPage"
       />
 
       <!-- Footer -->
@@ -33,6 +35,7 @@ export default {
 
         return {
             posts:[],
+            page:{},
         }
     },
     created(){
@@ -40,16 +43,31 @@ export default {
     },
     methods:{
 
-        getPosts(){
+        getPosts(page){
             // Get posts from api
 
-            axios.get('http://127.0.0.1:8000/api/posts')
+            axios.get(`http://127.0.0.1:8000/api/posts?page=${page}`)
                      .then(res => {
-                         this.posts = res.data;
+                         this.posts = res.data.data;
+                         this.page = {
+                             first:res.data.current_page,
+                             last:res.data.last_page,
+                         };
                      })
                      .catch( err => {
                          console.log(err);
                      })
+        },
+        getPage(e){
+            
+            if(e == 'prev'){
+                this.getPosts(this.page.first - 1) ;
+            }else if (e == 'next'){
+                this.getPosts(this.page.first + 1);
+            }else {
+                 this.getPosts(e)
+            }
+
         }
     },
 }

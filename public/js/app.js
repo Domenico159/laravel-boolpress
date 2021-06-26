@@ -1928,6 +1928,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 
@@ -1941,22 +1943,36 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      posts: []
+      posts: [],
+      page: {}
     };
   },
   created: function created() {
     this.getPosts();
   },
   methods: {
-    getPosts: function getPosts() {
+    getPosts: function getPosts(page) {
       var _this = this;
 
       // Get posts from api
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('http://127.0.0.1:8000/api/posts').then(function (res) {
-        _this.posts = res.data;
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("http://127.0.0.1:8000/api/posts?page=".concat(page)).then(function (res) {
+        _this.posts = res.data.data;
+        _this.page = {
+          first: res.data.current_page,
+          last: res.data.last_page
+        };
       })["catch"](function (err) {
         console.log(err);
       });
+    },
+    getPage: function getPage(e) {
+      if (e == 'prev') {
+        this.getPosts(this.page.first - 1);
+      } else if (e == 'next') {
+        this.getPosts(this.page.first + 1);
+      } else {
+        this.getPosts(e);
+      }
     }
   }
 });
@@ -2055,9 +2071,36 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Main',
-  props: ['posts']
+  props: ['posts', 'page']
 });
 
 /***/ }),
@@ -6573,7 +6616,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "main[data-v-b9c20fb8] {\n  min-height: calc(100vh - 110px);\n}", ""]);
+exports.push([module.i, "main[data-v-b9c20fb8] {\n  min-height: calc(100vh - 110px);\n}\nmain .card[data-v-b9c20fb8] {\n  cursor: pointer;\n  transition: border ease-in-out 0.3s;\n  box-sizing: border-box;\n}\nmain .card[data-v-b9c20fb8]:hover {\n  border-left: 10px inset #17d2eb;\n  border-bottom: 10px inset #17d2eb;\n}", ""]);
 
 // exports
 
@@ -38490,7 +38533,10 @@ var render = function() {
     [
       _c("Header"),
       _vm._v(" "),
-      _c("Main", { attrs: { posts: _vm.posts } }),
+      _c("Main", {
+        attrs: { posts: _vm.posts, page: _vm.page },
+        on: { clickBtn: _vm.getPage }
+      }),
       _vm._v(" "),
       _c("Footer")
     ],
@@ -38630,13 +38676,13 @@ var render = function() {
     _c("div", { staticClass: "container" }, [
       _c(
         "div",
-        { staticClass: "row" },
+        { staticClass: "row mt-5" },
         _vm._l(_vm.posts, function(post) {
-          return _c("div", { key: post.id, staticClass: "card-deck m-3" }, [
-            _c(
-              "div",
-              { staticClass: "card", staticStyle: { width: "18rem" } },
-              [
+          return _c(
+            "div",
+            { key: post.id, staticClass: "card-deck mb-5 col-md-4" },
+            [
+              _c("div", { staticClass: "card" }, [
                 _c("img", {
                   staticClass: "card-img-top",
                   attrs: { src: "" + post.img, alt: "" + post.img }
@@ -38651,11 +38697,76 @@ var render = function() {
                     _vm._v(" " + _vm._s(post.content) + " ")
                   ])
                 ])
-              ]
-            )
-          ])
+              ])
+            ]
+          )
         }),
         0
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "pagination d-flex justify-content-center" },
+        [
+          _c(
+            "button",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.page.first > 1,
+                  expression: "page.first > 1"
+                }
+              ],
+              staticClass: "btn btn-primary mr-2",
+              on: {
+                click: function($event) {
+                  return _vm.$emit("clickBtn", "prev")
+                }
+              }
+            },
+            [_vm._v("\n                Prev\n            ")]
+          ),
+          _vm._v(" "),
+          _vm._l(_vm.page.last, function(i) {
+            return _c(
+              "button",
+              {
+                key: i,
+                staticClass: "btn btn-primary mr-2",
+                on: {
+                  click: function($event) {
+                    return _vm.$emit("clickBtn", i)
+                  }
+                }
+              },
+              [_vm._v("\n            " + _vm._s(i) + "\n            ")]
+            )
+          }),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.page.first < _vm.page.last,
+                  expression: "page.first < page.last"
+                }
+              ],
+              staticClass: "btn btn-primary",
+              on: {
+                click: function($event) {
+                  return _vm.$emit("clickBtn", "next")
+                }
+              }
+            },
+            [_vm._v("\n                Next\n            ")]
+          )
+        ],
+        2
       )
     ])
   ])
