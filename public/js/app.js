@@ -2099,6 +2099,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Main',
   props: ['posts', 'page']
@@ -38600,7 +38601,7 @@ var staticRenderFns = [
     return _c("header", { staticClass: "text-center" }, [
       _c(
         "nav",
-        { staticClass: "navbar navbar-expand-lg navbar-light bg-light" },
+        { staticClass: "navbar navbar-expand-lg navbar-dark bg-primary" },
         [
           _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
             _vm._v("BoolPress")
@@ -38675,6 +38676,8 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("main", [
     _c("div", { staticClass: "container" }, [
+      _c("h1", { staticClass: "text-center mt-3" }, [_vm._v("Your posts")]),
+      _vm._v(" "),
       _c(
         "div",
         { staticClass: "row mt-5" },

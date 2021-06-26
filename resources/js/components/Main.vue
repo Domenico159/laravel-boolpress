@@ -3,6 +3,7 @@
   <main>
 
       <div class="container">
+          <h1 class="text-center mt-3">Your posts</h1>
           <div class="row mt-5">
               <div v-for="post in posts" :key="post.id"
               class="card-deck mb-5 col-md-4">
