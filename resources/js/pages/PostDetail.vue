@@ -1,7 +1,8 @@
 <template>
-  <div class="container d-flex">
+  <div class="container">
 
-     <div class="box-img mr-4">
+     <div class="d-flex">
+         <div class="box-img mr-4">
          <img  :src="`${ post.img}`" alt="">
      </div>
 
@@ -9,6 +10,9 @@
          <h1>{{post.title}}</h1>
          <h5>{{post.content}}</h5>
      </div>
+     </div>
+
+     <router-link class="btn btn-success mt-5 ml-2" :to="{name:'home'}">Back</router-link>
 
   </div>
 </template>
@@ -46,6 +50,14 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
+.btn{
+     opacity: 0;
+    transform: translateX(-80px);
+    transition: opacity 0.3 , transform 0.3s;
+    animation: effect-in 1s forwards;
+    animation-delay: 0.5s;
+}
 
 .box-img {
 

@@ -2171,6 +2171,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'PostDetail',
@@ -6708,7 +6712,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".box-img[data-v-ed1cf24c] {\n  opacity: 0;\n  transform: translateX(-80px);\n  transition: opacity 0.3, transform 0.3s;\n  -webkit-animation: effect-in-data-v-ed1cf24c 1s forwards;\n          animation: effect-in-data-v-ed1cf24c 1s forwards;\n}\n@-webkit-keyframes effect-in-data-v-ed1cf24c {\n0% {\n    opacity: 0;\n    transform: translateX(-200px);\n}\n100% {\n    opacity: 1;\n    transform: translateX(0);\n}\n}\n@keyframes effect-in-data-v-ed1cf24c {\n0% {\n    opacity: 0;\n    transform: translateX(-200px);\n}\n100% {\n    opacity: 1;\n    transform: translateX(0);\n}\n}\n.box-test h5[data-v-ed1cf24c] {\n  opacity: 0;\n  transform: translateY(-80px);\n  -webkit-animation: effect-in-h5-data-v-ed1cf24c 1s forwards;\n          animation: effect-in-h5-data-v-ed1cf24c 1s forwards;\n}\n@-webkit-keyframes effect-in-h5-data-v-ed1cf24c {\n0% {\n    opacity: 0;\n    transform: translateY(100px);\n}\n100% {\n    opacity: 1;\n    transform: translateY(0);\n}\n}\n@keyframes effect-in-h5-data-v-ed1cf24c {\n0% {\n    opacity: 0;\n    transform: translateY(100px);\n}\n100% {\n    opacity: 1;\n    transform: translateY(0);\n}\n}\n.box-test h1[data-v-ed1cf24c] {\n  opacity: 0;\n  transform: translateY(-80px);\n  -webkit-animation: effect-in-h1-data-v-ed1cf24c 1s forwards;\n          animation: effect-in-h1-data-v-ed1cf24c 1s forwards;\n}\n@-webkit-keyframes effect-in-h1-data-v-ed1cf24c {\n0% {\n    opacity: 0;\n    transform: translateY(-80px);\n}\n100% {\n    opacity: 1;\n    transform: translateY(0);\n}\n}\n@keyframes effect-in-h1-data-v-ed1cf24c {\n0% {\n    opacity: 0;\n    transform: translateY(-80px);\n}\n100% {\n    opacity: 1;\n    transform: translateY(0);\n}\n}", ""]);
+exports.push([module.i, ".btn[data-v-ed1cf24c] {\n  opacity: 0;\n  transform: translateX(-80px);\n  transition: opacity 0.3, transform 0.3s;\n  -webkit-animation: effect-in-data-v-ed1cf24c 1s forwards;\n          animation: effect-in-data-v-ed1cf24c 1s forwards;\n  -webkit-animation-delay: 0.5s;\n          animation-delay: 0.5s;\n}\n.box-img[data-v-ed1cf24c] {\n  opacity: 0;\n  transform: translateX(-80px);\n  transition: opacity 0.3, transform 0.3s;\n  -webkit-animation: effect-in-data-v-ed1cf24c 1s forwards;\n          animation: effect-in-data-v-ed1cf24c 1s forwards;\n}\n@-webkit-keyframes effect-in-data-v-ed1cf24c {\n0% {\n    opacity: 0;\n    transform: translateX(-200px);\n}\n100% {\n    opacity: 1;\n    transform: translateX(0);\n}\n}\n@keyframes effect-in-data-v-ed1cf24c {\n0% {\n    opacity: 0;\n    transform: translateX(-200px);\n}\n100% {\n    opacity: 1;\n    transform: translateX(0);\n}\n}\n.box-test h5[data-v-ed1cf24c] {\n  opacity: 0;\n  transform: translateY(-80px);\n  -webkit-animation: effect-in-h5-data-v-ed1cf24c 1s forwards;\n          animation: effect-in-h5-data-v-ed1cf24c 1s forwards;\n}\n@-webkit-keyframes effect-in-h5-data-v-ed1cf24c {\n0% {\n    opacity: 0;\n    transform: translateY(100px);\n}\n100% {\n    opacity: 1;\n    transform: translateY(0);\n}\n}\n@keyframes effect-in-h5-data-v-ed1cf24c {\n0% {\n    opacity: 0;\n    transform: translateY(100px);\n}\n100% {\n    opacity: 1;\n    transform: translateY(0);\n}\n}\n.box-test h1[data-v-ed1cf24c] {\n  opacity: 0;\n  transform: translateY(-80px);\n  -webkit-animation: effect-in-h1-data-v-ed1cf24c 1s forwards;\n          animation: effect-in-h1-data-v-ed1cf24c 1s forwards;\n}\n@-webkit-keyframes effect-in-h1-data-v-ed1cf24c {\n0% {\n    opacity: 0;\n    transform: translateY(-80px);\n}\n100% {\n    opacity: 1;\n    transform: translateY(0);\n}\n}\n@keyframes effect-in-h1-data-v-ed1cf24c {\n0% {\n    opacity: 0;\n    transform: translateY(-80px);\n}\n100% {\n    opacity: 1;\n    transform: translateY(0);\n}\n}", ""]);
 
 // exports
 
@@ -39034,17 +39038,33 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container d-flex" }, [
-    _c("div", { staticClass: "box-img mr-4" }, [
-      _c("img", { attrs: { src: "" + _vm.post.img, alt: "" } })
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "box-test" }, [
-      _c("h1", [_vm._v(_vm._s(_vm.post.title))]),
+  return _c(
+    "div",
+    { staticClass: "container" },
+    [
+      _c("div", { staticClass: "d-flex" }, [
+        _c("div", { staticClass: "box-img mr-4" }, [
+          _c("img", { attrs: { src: "" + _vm.post.img, alt: "" } })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "box-test" }, [
+          _c("h1", [_vm._v(_vm._s(_vm.post.title))]),
+          _vm._v(" "),
+          _c("h5", [_vm._v(_vm._s(_vm.post.content))])
+        ])
+      ]),
       _vm._v(" "),
-      _c("h5", [_vm._v(_vm._s(_vm.post.content))])
-    ])
-  ])
+      _c(
+        "router-link",
+        {
+          staticClass: "btn btn-success mt-5 ml-2",
+          attrs: { to: { name: "home" } }
+        },
+        [_vm._v("Back")]
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
