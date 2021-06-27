@@ -1996,6 +1996,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'About'
 });
@@ -2017,6 +2024,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Blog'
 });
@@ -2032,6 +2044,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -2084,6 +2098,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Home',
   data: function data() {
@@ -2100,7 +2115,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       // Get posts from api
-      axios.get("http://127.0.0.1:8000/api/posts?page=".concat(page)).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("http://127.0.0.1:8000/api/posts?page=".concat(page)).then(function (res) {
         _this.posts = res.data.data;
         _this.page = {
           first: res.data.current_page,
@@ -38656,7 +38671,43 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "container" }, [
-      _c("h1", [_vm._v("About")])
+      _c("h1", [_vm._v("About")]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus sunt laboriosam corrupti quaerat reiciendis quas dignissimos expedita, ratione quia saepe illum quo at repellendus. Numquam cupiditate ut nisi recusandae eveniet."
+        )
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus sunt laboriosam corrupti quaerat reiciendis quas dignissimos expedita, ratione quia saepe illum quo at repellendus. Numquam cupiditate ut nisi recusandae eveniet."
+        )
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus sunt laboriosam corrupti quaerat reiciendis quas dignissimos expedita, ratione quia saepe illum quo at repellendus. Numquam cupiditate ut nisi recusandae eveniet."
+        )
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus sunt laboriosam corrupti quaerat reiciendis quas dignissimos expedita, ratione quia saepe illum quo at repellendus. Numquam cupiditate ut nisi recusandae eveniet."
+        )
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus sunt laboriosam corrupti quaerat reiciendis quas dignissimos expedita, ratione quia saepe illum quo at repellendus. Numquam cupiditate ut nisi recusandae eveniet."
+        )
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus sunt laboriosam corrupti quaerat reiciendis quas dignissimos expedita, ratione quia saepe illum quo at repellendus. Numquam cupiditate ut nisi recusandae eveniet."
+        )
+      ])
     ])
   }
 ]
@@ -38688,7 +38739,39 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [_c("h1", [_vm._v("Blog")])])
+    return _c("div", { staticClass: "container" }, [
+      _c("h1", [_vm._v("Blog")]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita voluptas vero doloremque quidem asperiores, quo dolores modi accusamus facere delectus nostrum tempora illo eligendi inventore nihil assumenda. Sunt, dolor impedit?"
+        )
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita voluptas vero doloremque quidem asperiores, quo dolores modi accusamus facere delectus nostrum tempora illo eligendi inventore nihil assumenda. Sunt, dolor impedit?"
+        )
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita voluptas vero doloremque quidem asperiores, quo dolores modi accusamus facere delectus nostrum tempora illo eligendi inventore nihil assumenda. Sunt, dolor impedit?"
+        )
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita voluptas vero doloremque quidem asperiores, quo dolores modi accusamus facere delectus nostrum tempora illo eligendi inventore nihil assumenda. Sunt, dolor impedit?"
+        )
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita voluptas vero doloremque quidem asperiores, quo dolores modi accusamus facere delectus nostrum tempora illo eligendi inventore nihil assumenda. Sunt, dolor impedit?"
+        )
+      ])
+    ])
   }
 ]
 render._withStripped = true
@@ -38714,11 +38797,11 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("main", [
     _c("div", { staticClass: "container" }, [
-      _c("h1", { staticClass: "text-center mt-3" }, [_vm._v("Your posts")]),
+      _c("h1", { staticClass: "text-center" }, [_vm._v("Your posts")]),
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "row mt-5" },
+        { staticClass: "row mt-3" },
         _vm._l(_vm.posts, function(post) {
           return _c(
             "div",

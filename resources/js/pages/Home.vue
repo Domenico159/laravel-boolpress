@@ -3,8 +3,8 @@
   <main>
 
       <div class="container">
-          <h1 class="text-center mt-3">Your posts</h1>
-          <div class="row mt-5">
+          <h1 class="text-center">Your posts</h1>
+          <div class="row mt-3">
               <div v-for="post in posts" :key="post.id"
               class="card-deck mb-5 col-md-4">
                     <div class="card">
@@ -51,6 +51,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default { 
     name:'Home',
     data(){
