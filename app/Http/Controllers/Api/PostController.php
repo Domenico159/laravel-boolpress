@@ -17,4 +17,17 @@ class PostController extends Controller
         return response()->json($posts);
 
     }
+
+
+    // Show whit slug
+
+    public function show($slug){
+
+    //   dump($slug);
+
+    $post = Post::where('slug' , $slug)->first();
+
+    return response()->json($post);
+
+    }
 }

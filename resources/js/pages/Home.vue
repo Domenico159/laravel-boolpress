@@ -5,8 +5,14 @@
       <div class="container">
           <h1 class="text-center">Your posts</h1>
           <div class="row mt-3">
-              <div v-for="post in posts" :key="post.id"
-              class="card-deck mb-5 col-md-4">
+
+            <router-link v-for="post in posts" 
+            class=" mb-5 col-md-4 nav-link"
+            :key="post.id" 
+            :to="{name:'post-detail' , params:{slug: post.slug} } ">
+
+              <div 
+              class="card-deck">
                     <div class="card">
                         <img class="card-img-top" :src="`${ post.img}`" :alt="`${ post.img}`">
                         <div class="card-body">
@@ -15,6 +21,9 @@
                         </div>
                     </div>
                 </div>
+
+            </router-link>
+
           </div>
 
           <div class="pagination d-flex justify-content-center">

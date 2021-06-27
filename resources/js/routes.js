@@ -7,6 +7,7 @@ import VueRouter from 'vue-router';
 import Home from './pages/Home.vue';
 import About from './pages/About.vue';
 import Blog from './pages/Blog.vue';
+import PostDetail from './pages/PostDetail.vue';
 
 // Registrazione
 
@@ -33,6 +34,11 @@ const router = new VueRouter({
             path: '/blog' , 
             name:'blog',
             component: Blog,
+        },
+        {
+            path: '/home/:slug' , 
+            name:'post-detail',
+            component: PostDetail,
         },
     ],
 });
