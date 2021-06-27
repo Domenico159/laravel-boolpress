@@ -12,7 +12,7 @@
      </div>
      </div>
 
-     <router-link class="btn btn-success mt-5 ml-2" :to="{name:'home'}">Back</router-link>
+     <router-link class="btn btn-primary mt-5 ml-2" :to="{name:'home'}">Back</router-link>
 
   </div>
 </template>
