@@ -21,12 +21,12 @@
               <button 
               v-show="page.first > 1"
               class="btn btn-primary mr-2"
-               @click="$emit('clickBtn', 'prev')"
+               @click="getPage('prev')"
               >
                   Prev
               </button>
 
-              <button @click="$emit('clickBtn', i)"
+              <button @click="getPage(i)"
               :class="{'btn-primary' : i == page.first}"
               class="btn btn-number  mr-2"
               v-for="i in page.last"
@@ -38,7 +38,7 @@
               <button
               v-show="page.first < page.last"
               class="btn btn-primary"
-               @click="$emit('clickBtn', 'next')"
+               @click="getPage('next')"
               >
                   Next
               </button>
@@ -52,8 +52,42 @@
 
 <script>
 export default { 
-    name:'Main',
-    props:['posts' , 'page'],
+    name:'Home',
+    data(){
+        return {
+            posts:[],
+            page:{},
+        }
+    },
+    created(){
+      this.getPosts();
+    },
+    methods:{
+        getPosts(page){
+            // Get posts from api
+            axios.get(`http://127.0.0.1:8000/api/posts?page=${page}`)
+                     .then(res => {
+                         this.posts = res.data.data;
+                         this.page = {
+                             first:res.data.current_page,
+                             last:res.data.last_page,
+                         };
+                     })
+                     .catch( err => {
+                         console.log(err);
+                     })
+        },
+        getPage(e){
+            
+            if(e == 'prev'){
+                this.getPosts(this.page.first - 1) ;
+            }else if (e == 'next'){
+                this.getPosts(this.page.first + 1);
+            }else {
+                 this.getPosts(e)
+            }
+        }
+    },
 }
 </script>
 
@@ -66,7 +100,6 @@ main{
         opacity: 0;
         transform: scale(0.1);
         animation: card-effect 0.8s forwards;
-
         @keyframes card-effect {
             
             0%{
@@ -77,15 +110,12 @@ main{
                 opacity: 1;
                 transform: scale(1.0);
             }
-
         }
-
         &:hover {
             border-left: 10px inset rgb(23, 210, 235);
             border-bottom: 10px inset rgb(23, 210, 235);
         }
     } 
-
     .pagination{
         .btn-number{
             box-shadow: 0px 0px 5px #007bff;
