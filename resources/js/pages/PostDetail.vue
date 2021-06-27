@@ -45,6 +45,70 @@ export default {
 }
 </script>
 
-<style>
+<style scoped lang="scss">
+
+.box-img {
+
+    opacity: 0;
+    transform: translateX(-80px);
+    transition: opacity 0.3 , transform 0.3s;
+    animation: effect-in 1s forwards ;
+
+    }
+
+    @keyframes effect-in { 
+        0%{
+            opacity: 0;
+            transform: translateX(-200px);
+        }
+        100%{
+            opacity: 1;
+             transform: translateX(0);
+        }
+}
+
+.box-test{
+
+    h5{
+        opacity: 0;
+        transform: translateY(-80px);
+        animation: effect-in-h5 1s forwards ;
+    }
+
+      @keyframes effect-in-h5 { 
+        0%{
+            opacity: 0;
+            transform: translateY(100px);
+        }
+        100%{
+            opacity: 1;
+             transform: translateY(0);
+        }
+}
+
+
+
+
+
+    h1{
+        opacity: 0;
+        transform: translateY(-80px);
+        animation: effect-in-h1 1s forwards ;
+    }
+
+      @keyframes effect-in-h1 { 
+        0%{
+            opacity: 0;
+            transform: translateY(-80px);
+        }
+        100%{
+            opacity: 1;
+             transform: translateY(0);
+        }
+}
+
+
+
+}
 
 </style>
