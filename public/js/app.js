@@ -2104,6 +2104,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Home',
@@ -2139,6 +2140,22 @@ __webpack_require__.r(__webpack_exports__);
       } else {
         this.getPosts(e);
       }
+    },
+    formatDate: function formatDate(date) {
+      var postDate = new Date(date);
+      var day = postDate.getDate();
+      var month = postDate.getMonth() + 1;
+      var year = postDate.getFullYear();
+
+      if (day < 10) {
+        day = "0" + day;
+      }
+
+      if (month < 10) {
+        month = "0" + month;
+      }
+
+      return "".concat(day, "/").concat(month, "/").concat(year);
     }
   }
 });
@@ -2156,6 +2173,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+//
 //
 //
 //
@@ -2195,6 +2213,22 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (err) {
         console.log(err);
       });
+    },
+    formatDate: function formatDate(date) {
+      var postDate = new Date(date);
+      var day = postDate.getDate();
+      var month = postDate.getMonth() + 1;
+      var year = postDate.getFullYear();
+
+      if (day < 10) {
+        day = "0" + day;
+      }
+
+      if (month < 10) {
+        month = "0" + month;
+      }
+
+      return "".concat(day, "/").concat(month, "/").concat(year);
     }
   }
 });
@@ -39054,7 +39088,9 @@ var render = function() {
                     _vm._v(" "),
                     _c("p", { staticClass: "card-text" }, [
                       _vm._v(" " + _vm._s(post.content) + " ")
-                    ])
+                    ]),
+                    _vm._v(" "),
+                    _c("p", [_vm._v(_vm._s(_vm.formatDate(post.created_at)))])
                   ])
                 ])
               ])
@@ -39166,7 +39202,9 @@ var render = function() {
         _c("div", { staticClass: "box-test" }, [
           _c("h1", [_vm._v(_vm._s(_vm.post.title))]),
           _vm._v(" "),
-          _c("h5", [_vm._v(_vm._s(_vm.post.content))])
+          _c("h5", [_vm._v(_vm._s(_vm.post.content))]),
+          _vm._v(" "),
+          _c("h5", [_vm._v(_vm._s(_vm.formatDate(_vm.post.created_at)))])
         ])
       ]),
       _vm._v(" "),

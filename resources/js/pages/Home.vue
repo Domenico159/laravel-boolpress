@@ -18,6 +18,7 @@
                         <div class="card-body">
                             <h3 class="card-title"> {{ post.title }} </h3>
                             <p class="card-text"> {{ post.content }} </p>
+                            <p>{{formatDate(post.created_at)}}</p>
                         </div>
                     </div>
                 </div>
@@ -96,7 +97,20 @@ export default {
             }else {
                  this.getPosts(e)
             }
-        }
+        },
+         formatDate(date) {
+      const postDate = new Date(date);
+      let day = postDate.getDate();
+      let month = postDate.getMonth() + 1;
+      const year = postDate.getFullYear();
+      if (day < 10) {
+        day = "0" + day;
+      }
+      if (month < 10) {
+        month = "0" + month;
+      }
+      return `${day}/${month}/${year}`;
+    },
     },
 }
 </script>

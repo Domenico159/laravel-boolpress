@@ -9,6 +9,7 @@
      <div class="box-test">
          <h1>{{post.title}}</h1>
          <h5>{{post.content}}</h5>
+         <h5>{{ formatDate(post.created_at) }}</h5>
      </div>
      </div>
 
@@ -44,7 +45,20 @@ export default {
 
                 console.log(err);
             });
-        }
+        },
+        formatDate(date) {
+      const postDate = new Date(date);
+      let day = postDate.getDate();
+      let month = postDate.getMonth() + 1;
+      const year = postDate.getFullYear();
+      if (day < 10) {
+        day = "0" + day;
+      }
+      if (month < 10) {
+        month = "0" + month;
+      }
+      return `${day}/${month}/${year}`;
+    },
     }
 }
 </script>
